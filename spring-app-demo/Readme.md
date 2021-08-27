@@ -26,16 +26,16 @@ Cách 2:
 
 - Clone source code  về máy
 
-- Bên trong thư mục chứa source code chạy câu lệnh __mvn clean package__ để build source code ra thư mục target 
+- Bên trong thư mục chứa source code chạy câu lệnh `mvn clean package` để build source code ra thư mục target 
 
 - Viết dockerfile: 
        * Sử dụng base image openjdk:8-alpine
        * Copy file websocket-demo-0.0.1-SNAPSHOT.jar vào docker image
-       * Dùng lệnh sau làm CMD: __java -Djava.security.egd=file:/dev/./urandom -jar websocket-demo-0.0.1-SNAPSHOT.jar__
+       * Dùng lệnh sau làm CMD: `java -Djava.security.egd=file:/dev/./urandom -jar websocket-demo-0.0.1-SNAPSHOT.jar`
 
 #### Chạy container
 
-1. Từ Dockerfile sử dụng câu lệnh __docker build -t spring-app:latest .__ build thành Docker Image có tên là spring-app.
+1. Từ Dockerfile sử dụng câu lệnh `docker build -t spring-app:latest .` build thành Docker Image có tên là spring-app.
 
 2. Khởi động container từ image spring-app: ```docker run -d --name spring-app -p 8088:8080 spring-app:latest ``` container chạy ngầm, expose cổng 8080 của container ra cổng 8088 của host.
 
