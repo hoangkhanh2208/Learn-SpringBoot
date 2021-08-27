@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a009d136-a5ca-45b2-88ad-a1e1e43b6a42" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Student-Manager/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/java/com/hoangkhanh/run/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/java/com/hoangkhanh/run/Film.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/java/com/hoangkhanh/run/FilmController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/resources/static/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/resources/templates/addFilm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/resources/templates/listFilm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/main/resources/templates/success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student-Manager/src/test/java/com/hoangkhanh/entity/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1u7pg1VlUeliUtZxgDW9ZBJtCFM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/First-Exercise" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a009d136-a5ca-45b2-88ad-a1e1e43b6a42" name="Default Changelist" comment="" />
+      <created>1624026589577</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624026589577</updated>
+    </task>
+    <servers />
+  </component>
+</project>

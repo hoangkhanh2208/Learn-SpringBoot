@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul th:each="a, i : ${peoples}}">
+        <li th:text="${i.count}" >1</li>
+        <li th:text="${i.even}" >1</li>
+        <li th:text="${i.odd}" >1</li>
+
+        <li th:text="${a.name}" ></li>
+        <li th:text="${a.nationality}" ></li>
+        <li th:text="${a.birthdate}" ></li>
+        <li th:text="${a.gender}" ></li>
+    </ul>
+
+    
+    <a th:href="@{https://frontbackend.com/tag/thymeleaf}" >click me</a>
+
+    <span>Hello, <span th:text="${peoples}"></span></span>
+</body>
+</html>

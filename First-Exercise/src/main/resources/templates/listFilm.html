@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Danh sách phim hay: </h1>
+
+    <table class="table ">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Director</th>
+            <th scope="col">Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="film : ${listFilm}">
+            <th scope="row"></th>
+            <td><span th:text="*{film.getTitle()}"></span></td>
+            <td><span th:text="*{film.getDescription()}"></span></td>
+            <td><span th:text="*{film.getDirector()}"></span></td>
+            <td><span th:text="*{film.getYear()}"></span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/addFilm}" class="btn btn-success">Thêm phim</a>
+</body>
+</html>

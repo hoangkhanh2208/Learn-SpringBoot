@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="template :: header('checkout')">
+<body>
+    <div class="container">
+        <h1>Shop Minh Cường</h1>
+
+        <h2>Cám ơn bạn đã mua hàng!</h2>
+    
+        <h4>Xin chào <strong th:text="${name}">Name</strong>, Chúng tôi đã nhận được đặt hàng của bạn, sẽ có nhân viên gọi xác nhận đơn hàng anh/chị chú ý điện thoại nhé.</h4>
+
+
+    <div>
+      <h3>Thông tin đơn hàng</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tên sản phẩm</th>
+            <th scope="col">Giá sản phẩm</th>
+            <th scope="col">Số lượng</th>
+            <th scope="col">Giá tiền</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="orderLine : ${cart.orderLines}">
+             <td th:text="${orderLine.product.name}">Sony WXMH 1000</td>
+             <td th:text="${#numbers.formatInteger(orderLine.product.price, 3, 'POINT')}">4000000</td>
+             <td th:text="${orderLine.count}" id="count">1</td>
+             <td th:text="${#numbers.formatInteger(orderLine.product.price * orderLine.count, 3, 'POINT')}">4000000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Discount: <span th:text="${#numbers.formatInteger(-cart.discount, 3, 'POINT')}">4000000</span></h4>
+      <h4>VAT: <span th:text="${#numbers.formatInteger(cart.vatTax, 3, 'POINT')}">4000000</span></h4>
+
+      <h3>Tổng số tiền: <span th:text="${#numbers.formatInteger(cart.total, 3, 'POINT')}">4000000</span></h3>
+      
+    </div>
+
+    <form action="@{/confirm}" method="POST">
+    <button type="submit" class="btn btn-primary" >Xác nhận đơn hàng</button>
+    </form>
+    </div>
+</body>
+</html>

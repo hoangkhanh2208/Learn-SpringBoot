@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+    <nav th:replace="home.html :: menu"></nav>
+
+    <a class="btn btn-success" href="/addpersonnel" th:utext="#{label.add}">Add</a>
+
+
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+            <th th:utext="#{label.avatar}">Avatar</th>
+            <th >Id</th>
+            <th th:utext="#{label.fullname}">Full Name</th>
+            <th th:utext="#{label.job}">Job</th>
+            <th th:utext="#{label.gender}">Gender</th>
+            <th th:utext="#{label.birthday}">BirthDay</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr th:each="personnel : ${personnels}">
+                <td><img th:src="@{'/photos/' + ${personnel .image}}" alt="" width=" 100px" height="100px"></td>
+                <td th:text="${personnel.id}"></td>
+                <td th:text="${personnel.name}"></td>
+                <td th:text="${personnel.job.name}"></td>
+                <td th:text="${personnel.gender}"></td>
+                <td th:text="${personnel.birthDay}"></td>
+                <!-- <td th:text="${#dates.format(personnel.birthDay, 'dd-MM-yyyy')}"></td> -->
+                <td><a class="btn btn-success" th:href="@{/editpersonnel/{id}(id=${personnel.id})}" th:utext="#{label.edit}">Edit</a></td>
+                <td>
+                    <form th:action="@{/deletepersonnel/{id}(id=${personnel.id})}" method="post">
+                        <!-- <a class="btn" href="" type="submit">Delete</a> -->
+                        <input class="btn btn-success" type="submit" th:value="#{label.delete}" >    
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

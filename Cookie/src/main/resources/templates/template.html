@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:fragment="header">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <link
+      th:rel="stylesheet"
+      th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"
+    />
+    <link
+      th:rel="stylesheet"
+      th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "
+    />
+  </head>
+  <body>
+    <div th:fragment="menu">
+    <nav class="nav">
+      <a class="nav-link" th:href="@{/}">Home</a>
+      <a class="nav-link" th:href="@{/blog}">Blog</a>
+      <a class="nav-link" th:href="@{/settingform}">Setting</a>
+    </nav>
+    </div>
+
+    <script th:fragment="changeElement">
+      function getCookie(cname) {
+        console.log(document.cookie);
+        let name = cname + "=";
+        let ca = document.cookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      let bgColor = getCookie("bgcolor");
+      let fcolor = getCookie("fcolor");
+      let fsize = getCookie("fsize");    
+        document.body.style.backgroundColor = bgColor;
+        document.body.style.color = fcolor;
+        document.body.style.fontSize = fsize + 'em';
+    </script>
+  </body>
+</html>

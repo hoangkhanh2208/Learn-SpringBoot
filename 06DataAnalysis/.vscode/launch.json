@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-PeopledataApplication<peopledata>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "vn.techmaster.peopledata.PeopledataApplication",
+      "projectName": "peopledata",
+      "args": ""
+    }
+  ]
+}

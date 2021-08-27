@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="template :: header('checkout')">
+</head>
+
+<body>
+  <nav th:replace="template :: nav(${cart.orderLines.size()})"></nav>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Manufacturer</th>
+          <th scope="col">Price</th>
+          <th scope="col">Count</th>
+          <th scope="col"></th>
+          <th scope="col">Sub Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="orderLine, iStat:${cart.orderLines}">
+          <th scope="row" th:text="${iStat.index} +1"></th>
+          <td th:text="${orderLine.product.name}">Sony WXMH 1000</td>
+          <td th:text="${orderLine.product.manufacturer}">Sony</td>
+          <td th:text="${#numbers.formatInteger(orderLine.product.price, 3, 'POINT')}">4000000</td>
+          <td th:text="${orderLine.count}" id="count">1</td>
+          <td>            
+            <input type="button" value="+" th:onclick="|window.location.href='/buy/${orderLine.product.id}'|">
+            <input type="button" value="-" th:id="${iStat.index}" th:onclick="|window.location.href='/refunded/${orderLine.product.id}'|">
+          </td>
+        
+          <td th:text="${#numbers.formatInteger(orderLine.product.price * orderLine.count, 3, 'POINT')}">4000000</td>
+        </tr>
+        <tr>
+          <td colspan="3"></td>
+          <td colspan="2">Raw Total</td>
+          <td th:text="${#numbers.formatInteger(cart.rawTotal, 3, 'POINT')}">4000000</td>
+        </tr>
+        <tr>
+          <td colspan="3"></td>
+          <td colspan="2">Discount</td>
+          <td th:text="${#numbers.formatInteger(-cart.discount, 3, 'POINT')}">4000000</td>
+        </tr>
+        <tr>
+          <td colspan="3"></td>
+          <td colspan="2">VAT</td>
+          <td th:text="${#numbers.formatInteger(cart.vatTax, 3, 'POINT')}">4000000</td>
+        </tr>
+        <tr>
+          <td colspan="3"></td>
+          <td colspan="2">Final Total</td>
+          <td th:text="${#numbers.formatInteger(cart.total, 3, 'POINT')}">4000000</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <form th:action="@{/sendEmail}" th:object="${customer}" method="POST">
+      <div class="form-group">
+        <label for="fullname">Full name</label>
+        <input type="text" class="form-control" th:field="*{name}" id="fullname" placeholder="Full name" required>
+        
+      </div><br>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" th:field="*{email}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+        
+      </div><br>
+      <div class="form-group">
+        <label for="phonenumber">Phone number</label>
+        <input type="tel" class="form-control" th:field="*{phoneNumber}" id="phonenumber" placeholder="" required>
+      </div><br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+  </div>
+  </div>
+
+  <!-- <script type="text/javascript">
+      var count_input = document.getElementById("count");
+      var count = count_input.textContent;
+
+      var a = 1;
+      if (count == 1) {
+        while (true) {
+          var s = a.toString;
+          document.getElementById("1").disabled = true;
+          a++;
+        }
+      }
+  </script> -->
+</body>
+
+</html>

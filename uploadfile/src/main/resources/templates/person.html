@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <h1>Danh sách Person</h1><br>
+
+    <a class="btn btn-success" href="/person">Add</a>
+
+    <br><br>
+
+    <!-- <form class="form-inline" th:action="@{/search}">
+        <input class="form-control"  type="text" th:name="keyword" th:value="${key}" placeholder="type keyword here"/>
+        <input class="btn btn-success" type="submit" value="Search">
+    </form> -->
+
+    <br>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th><mark>Id</mark></th>
+            <th>Full Name</th>
+            <th>Job</th>
+            <th>Gender</th>
+            <th>BirthDay</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr th:each="person : ${persons}">
+            <td><img th:src="|/images/${person.pathPhoto}|" alt="" width=" 100px" height="100px"></td>
+            <td th:text="${person.id}"></td>
+            <td th:text="${person.name}"></td>
+            <td th:text="${person.job}"></td>
+            <td th:text="${person.gender}"></td>
+            <td th:text="${#dates.format(person.birthDay, 'dd-MM-yyyy')}"></td>
+            <td><a class="btn btn-success" th:href="@{/editperson/{id}(id=${person.id})}"><i></i>Edit</a></td>
+            <td>
+                <form action="#" th:action="@{/deleteperson/{id}(id=${person.id})}" method="post">
+                    <!-- <a class="btn" href="" type="submit">Delete</a> -->
+                    <input class="btn btn-success" type="submit" value="Delete">    
+                </form>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

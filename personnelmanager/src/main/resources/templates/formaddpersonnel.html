@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD</title>
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}"/>
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+    <!-- <link th:rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css} "/> -->
+
+</head>
+<body>
+    <nav th:replace="home.html :: menu"></nav>
+<div class="container">
+    <form action="#" th:action="@{/addpersonnel}" method="post" enctype="multipart/form-data" th:object="${personnel} ">
+        <!-- <input id="name" type="hidden" placeholder="Full Name" th:field="*{id}"  required> -->
+        <div class="form-group row">
+            <div class="col-md-4 mt-5"> 
+                <div class="form-group">
+                    <label for="name" th:utext="#{label.fullname}">Full Name</label>
+                    <input class="form-control" id="name" type="text"  th:field="*{name}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="job" th:utext="#{label.job}">Job</label>
+                    <select class="form-control selectpicker" th:field="*{job}" name="job">
+                        <option th:each="job : ${jobs}" name="job" th:value="${job.id}" th:text="${job.name}" ></option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="female" name="female" class="custom-control-input" value="Female" th:field="*{gender}">
+                        <label class="custom-control-label" for="female">Female</label>
+                    </div>
+                     <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="male" name="male" class="custom-control-input" value="Male" th:field="*{gender}">
+                        <label class="custom-control-label" for="male">Male</label>
+                    </div>
+                </div>
+
+                <label for="birthdate" th:utext="#{label.birthday}">Date of birth</label>
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="birthdate" autocomplete="off" th:field="*{birthDay}" required/>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+
+                <br>
+                
+                <p>Select a photo</p>
+                <input type="file" id="customFile" name="filename" required/>
+
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" th:utext="#{label.add}">Add</button>
+    </form>
+
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/bootstrap-datepicker/js/bootstrap-datepicker.js}"></script>
+
+<script>
+    $('.input-group.date').datepicker({
+        format: 'dd-mm-yyyy',
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
+</body>
+</html>
