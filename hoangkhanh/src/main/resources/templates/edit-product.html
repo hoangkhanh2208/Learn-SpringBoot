@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form th:action="@{/edit-product}" method="post" th:object="${product}">
+      <input type="hidden" name="name" th:field="*{id}" /><br />
+      <label for="name">Product Name:</label><br />
+      <input type="text" name="name" th:field="*{name}" /><br />
+      <label for="brand">Brand:</label><br />
+      <input type="text" name="brand" th:field="*{brand}"/><br /><br />
+      <label for="madeIn">Made In:</label><br />
+      <input type="text" name="madeIn" th:field="*{madeIn}"/><br /><br />
+      <label for="price">Price:</label><br />
+      <input type="text" name="price" th:field="*{price}" /><br /><br />
+      <input type="submit" value="Save" />
+    </form>
+  </body>
+</html>
