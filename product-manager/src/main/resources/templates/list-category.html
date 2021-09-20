@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Category List</h1>
+
+    <hr />
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th colspan="2">Actions</th>
+      </tr>
+      <tr th:each="category : ${categories}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+        <td>
+          <a th:href="@{/edit-product/{id}(id=${category.id})}">edit</a>
+        </td>
+        <td>
+          <a th:href="@{/delete-product/{id}(id=${category.id})}">delete</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

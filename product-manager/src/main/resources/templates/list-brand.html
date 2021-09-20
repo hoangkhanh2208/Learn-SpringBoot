@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Brand List</h1>
+
+    <hr />
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th> 
+        <th>Category</th>
+        <th colspan="2">Actions</th>
+      </tr>
+      <tr th:each="brand : ${brands}">
+        <td th:text="${brand.id}"></td>
+        <td th:text="${brand.name}"></td>
+        <td th:text="${product.category.name}"></td>
+        <td>
+          <a th:href="@{/edit-product/{id}(id=${brand.id})}">edit</a>
+        </td>
+        <td>
+          <a th:href="@{/delete-product/{id}(id=${brand.id})}">delete</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
